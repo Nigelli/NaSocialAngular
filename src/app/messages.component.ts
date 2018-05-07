@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 
 import { ApiService } from "./api.service";
 
@@ -9,11 +10,12 @@ import { ApiService } from "./api.service";
             </div>`
 })
 export class MessagesComponent {
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    this.apiService.getMessages();
+    var userId = this.route.snapshot.params.id;
+    this.apiService.getMessages(userId);
   }
 }

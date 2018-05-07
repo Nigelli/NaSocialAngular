@@ -20,6 +20,16 @@ import { ApiService } from "./api.service";
                 </mat-list> 
             </mat-card-content>
         </mat-card>
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>
+                    <h4>Posts</h4>
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>  
+                <messages></messages>
+            </mat-card-content>
+        </mat-card>
     `
 })
 export class ProfileComponent {
