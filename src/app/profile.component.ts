@@ -42,7 +42,7 @@ export class ProfileComponent {
     //Add 'implements OnInit' to the class.
     var id = this.route.snapshot.params.id;
     this.apiService.getProfile(id).subscribe(data => {
-      this.profile = data.json();
+      this.profile = data;
     });
   }
 }
